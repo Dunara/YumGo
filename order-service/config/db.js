@@ -1,0 +1,13 @@
+const mongoose = require("mongoose");
+
+const connectDB = async () => {
+  try {
+    await mongoose.connect("mongodb://tempaco2002:tempaco2002@ac-gglfvtp-shard-00-00.0wml6k1.mongodb.net:27017,ac-gglfvtp-shard-00-01.0wml6k1.mongodb.net:27017,ac-gglfvtp-shard-00-02.0wml6k1.mongodb.net:27017/yumgo?ssl=true&replicaSet=atlas-7uxoz3-shard-0&authSource=admin&appName=Cluster0");
+    console.log("MongoDB Connected");
+  } catch (error) {
+    console.error(error.message);
+    process.exit(1);
+  }
+};
+
+module.exports = connectDB;
